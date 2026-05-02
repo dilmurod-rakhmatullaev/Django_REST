@@ -14,12 +14,12 @@
 {% block mainmenu %}
         <div class="header">
             <ul id="mainmenu" class="mainmenu">
-            <li class="logo"><a href="#"><div class="logo"></div></a></li>
+            <li class="logo"><a href="{% url 'home' %}"><div class="logo"></div></a></li>
 {% for m in menu %}
     {% if not forloop.last %}
-            <li><a href="#">{{m.title}}</a></li>
+            <li><a href="{% url m.url_name %}">{{m.title}}</a></li>
     {% else %}
-            <li class="last"><a href="#">{{m.title}}</a></li>
+            <li class="last"><a href="{% url m.url_name %}">{{m.title}}</a></li>
     {% endif %}
 {% endfor %}
             </ul>
@@ -62,7 +62,7 @@
 <!-- Footer -->
 <tr><td valign=top>
     <div id="footer">
-        <p>&copy; 2021 Partial or full copying of information from this site for distribution on other resources, including paper ones, is strictly prohibited.</p>
+        <p>&copy; 2026 Partial or full copying of information from this site for distribution on other resources, including paper ones, is strictly prohibited.</p>
     </div>
 </td></tr>
 <!-- End footer and page -->
